@@ -12,7 +12,7 @@ class DeadOrLiveTest {
         |.#..#.##..""".stripMargin
 
     var expected = "..........\n........#.\n..##.#...#\n..#######."
-    var actual = DeadOrLive.evolution_grille(grille, n_iteration = 5)
+    var actual = DeadOrLive.genererGrille(grille, n_iteration = 5)
 
     assertEquals(expected, actual)
 }
@@ -21,7 +21,7 @@ class DeadOrLiveTest {
     val voisins : List[Char] = List('#','#','#','.')
     val cellule : Char = '#'
     val expected = '#'
-    val actual = DeadOrLive.dead_or_live(voisins : List[Char], cellule: Char)
+    val actual = DeadOrLive.checkDeadOrLive(voisins : List[Char], cellule: Char)
     assertEquals(actual,expected)
   }
   @org.junit.Test
@@ -29,7 +29,7 @@ class DeadOrLiveTest {
     val voisins : List[Char] = List('#','#','#','.','#')
     val cellule : Char = '#'
     val expected = '.'
-    val actual = DeadOrLive.dead_or_live(voisins : List[Char], cellule: Char)
+    val actual = DeadOrLive.checkDeadOrLive(voisins : List[Char], cellule: Char)
     assertEquals(actual,expected)
   }
 
@@ -38,7 +38,7 @@ class DeadOrLiveTest {
     val voisins : List[Char] = List('#','#','.','.','.')
     val cellule : Char = '#'
     val expected = '#'
-    val actual = DeadOrLive.dead_or_live(voisins : List[Char], cellule: Char)
+    val actual = DeadOrLive.checkDeadOrLive(voisins : List[Char], cellule: Char)
     assertEquals(actual,expected)
   }
 
